@@ -152,6 +152,61 @@ Copy the IP address of your droplet, which you’ll need for the next step.
 Connecting to Your Droplet via SSH
 Find your droplet's IP address in the DigitalOcean control panel.
 
+## Automating Setup with cloud-init
+
+Cloud-init is a tool used to automate tasks when your server first boots. We'll use it to:
+Create a new user.
+Install essential packages.
+Set up your SSH key for the new user.
+Disable root SSH access for security.
+Creating the cloud-init File
+
+Install neovim using the code below if you dont already have it installed
+```
+sudo pacman -S neovim
+```
+
+To create a Cloud-Init configuration file, run code: 
+```
+nvim cloud-init.yml
+```
+Once you run the code, Add the following content to the file:
+```
+#cloud-config
+users:
+  - name: newuser
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    groups: sudo
+    shell: /bin/bash
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3...your_public_key_here
+
+
+packages:
+  - ripgrep
+  - rsync
+  - neovim
+  - fd
+  - less
+  - man-db
+  - bash-completion
+  - tmux
+
+
+ssh_pwauth: false
+```
+
+>Note: This creates a user newuser with sudo privileges.
+Installs vim, curl, and git.
+Disables password authentication for SSH.
+Upload this file during the Droplet creation process by selecting the User Data option.
+
+After pasting, replace “user name” and “user group” with the name and group of the user.
+
+Once those are replaced, you can run the command and receive a public key front your SSH Key.
+
+You should now have cloud init running  on your server.
+
 Open your terminal and connect to your droplet using the following command:
 
 ```
