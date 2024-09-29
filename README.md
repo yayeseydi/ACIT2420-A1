@@ -66,6 +66,7 @@ pbcopy < ~/.ssh/do-key.pub
 ```
 
 For Linux users:
+```
 wl-copy < ~/.ssh/do-key.pub
 ```
 ## Adding a Custom Arch Linux Image
@@ -212,3 +213,43 @@ Open your terminal and connect to your droplet using the following command:
 ```
 ssh -i .ssh/do-key arch@your-droplets-ip-address
 ```
+## Creating an SSH Config File
+What is an SSH Config file?
+SSH config files are used to simplify SSH connections after the server has been set up.
+
+To set up an SSH Configeration 
+
+Open your twerminal and type in the command 
+
+```
+ssh arch
+```
+It should look something like this after running it.
+
+<img src = "./assets/ssh_screenshot.jpg">
+
+Once you run that command, type is:
+```
+cd ~/.ssh
+```
+This will take you to your SSH Directory
+
+You can open and edit the config file typing 
+```
+code config
+```
+Go ahead and paste the following command
+
+```
+Here is an example of 
+Host arch
+  HostName 143.198.140.15
+  User arch
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/do-key
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  #github (This is just an example)
+  Host github.com
+  HostName github.com
+  ```
