@@ -14,4 +14,5 @@ In this tutorial, you will be guided through the process of setting up an Arch L
 5. Creating an Arch Linux Droplet
 6. Connecting to Your Droplet via SSH
 7. Automating Setup with cloud-init
-8. Citations
+8. Create SSH Config File
+9. Citations
