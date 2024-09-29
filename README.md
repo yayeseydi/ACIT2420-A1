@@ -68,3 +68,92 @@ pbcopy < ~/.ssh/do-key.pub
 For Linux users:
 wl-copy < ~/.ssh/do-key.pub
 ```
+## Adding a Custom Arch Linux Image
+
+Download the Arch Linux image from https://gitlab.archlinux.org/archlinux/arch-boxes/-/packages/
+To do this, click the most recent image file link. 
+
+<img src = "./assets/archlinux_recentimage.jpg">
+
+---
+
+Then select the link with "cloudimg". The ".qcow2" and download the most recent image.
+
+<img src = "./assets/arch linux_imagelink.jpg">
+
+---
+To upload a custom Arch Linux image to your DigitalOcean account:
+
+Go to the images section of the DigitalOcean Control Panel.
+
+>Note Once you do so, you will see that there are multiple tabs including Snapshots, Backups, and Custom Images.
+
+Click on custom images to upload a new one.
+
+Click the upload image button and select the arch linux file you downloaded.
+
+Once the upload is complete, you will now have your Arch linux file uploaded onto Digitalocean.
+
+
+## Creating an Arch Linux Droplet
+
+Steps to Create a Droplet:
+
+Click the green Create button at the top of the screen.
+
+From the dropdown menu, select Droplets.
+
+Click the green Create button, and a dropdown menu will appear.
+
+From the dropdown menu, select Droplets.
+
+<img src = "./assets/create_droplet screenshot.jpg">
+---
+
+configure Droplet Settings:
+
+You’ll be taken to the configuration page where you can set up your new droplet.
+Choose Data Center Region:
+Under Choose a Data Center Region, select San Francisco (SF03) as the location.
+
+<img src = "./assets/choose_region.jpg">
+
+
+This will take you to a screen where you can configure your new droplet.
+
+Select a Custom Image:
+
+Under Choose an Image, go to the Custom Images tab.
+Select your custom Arch Linux image from the list.
+
+Choose Droplet Size:
+
+Leave the default Basic Plan selected unless more resources are needed
+
+<img src = "./assets/basic_plan screenshot.jpg">
+
+---
+
+Set Authentication Method:
+
+Under Choose Authentication, select SSH Key.
+Choose the SSH key you added to your DigitalOcean account in the previous steps.
+Set a Hostname:
+
+Create a Hostname for your droplet. This will appear in your terminal prompt when connected.
+Leave the remaining settings at their defaults.
+Create the Droplet:
+
+After configuring the settings, click the Create Droplet button at the bottom of the page.
+Find Your Droplet’s IP Address:
+
+Once the droplet is created, it will appear in your DigitalOcean dashboard.
+Copy the IP address of your droplet, which you’ll need for the next step.
+Connecting to Your Droplet via SSH
+Find your droplet's IP address in the DigitalOcean control panel.
+
+Open your terminal and connect to your droplet using the following command:
+
+```
+ssh -i .ssh/do-key arch@your-droplets-ip-address
+```
