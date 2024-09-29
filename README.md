@@ -253,3 +253,16 @@ Host arch
   Host github.com
   HostName github.com
   ```
+## Conclusion 
+
+Congratulations! You’ve successfully set up an Arch Linux server on DigitalOcean, created SSH keys, automated its initial setup using cloud-init, connected to it using SSH, and creaing an SSH config file.
+
+## Citations
+
+Arch Linux. (2024, September 27). Arch boxes packages. GitLab. https://gitlab.archlinux.org/archlinux/arch-boxes/-/packages/
+
+DigitalOcean. (2024, September 27). DigitalOcean cloud platform. DigitalOcean. https://cloud.digitalocean.com/login?redirect_url=https%3A%2F%2Fcloud.digitalocean.com%2Fprojects%2F670d2082-7794-411a-a169-f6a6df391aee%2Fresources%3Fi%3D2bf7f9
+
+McNinch, N. (2024, September 25). Week three notes. GitLab. https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-three.md?ref_type=heads
+
+McNinch, N. (2024, September 25). Week two notes. GitLab. https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-three.md?ref_type=heads
